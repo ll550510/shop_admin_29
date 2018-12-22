@@ -26,7 +26,7 @@ const router = new Router({
 // from: 从哪儿
 // next: 是否放行  next():表示直接放行   next('/login')表示跳转到/login
 router.beforeEach((to, from, next) => {
-  if (to.path === 'login') {
+  if (to.path === '/login') {
     // 直接放行
     next()
     return

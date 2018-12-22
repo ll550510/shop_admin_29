@@ -83,8 +83,10 @@ export default {
           }).then(res => {
             console.log(res.data)
             if (res.data.meta.status === 200) {
-              // this.$message.success('登录成功')
-              console.log('ok')
+              this.$message.success('登录成功')
+              // 把后台颁发的token存起来
+              localStorage.setItem('token', res.data.data.token)
+              this.$router.push('/home')
             } else {
               // 失败的消息弹出一个消息提示
               this.$message({
